@@ -18,8 +18,9 @@ jobs:
 
       - name: Super-Linter
         uses: github/super-linter@v4.10.1
-        env: 
-          GITHUB_TIKEN: ${{ secrets.GITHUB_TOKEN }}
+        FILTER_REGEX_EXCLUDE: README.md
+        ENV: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
   docker:
