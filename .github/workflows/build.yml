@@ -18,7 +18,8 @@ jobs:
 
       - name: Super-Linter
         uses: github/super-linter@v4.10.1
-        env: ${{ secrets.GITHUB_TOKEN }}
+        env: 
+          GITHUB_TIKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
   docker:
