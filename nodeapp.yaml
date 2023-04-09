@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodeapp
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      nodeapp: web
+  template:
+    metadata:
+      labels:
+        nodeapp: web
+    spec:
+      containers:
+      - name: nodeapp-site
+        image: mariiabarabukha/nodeapp_mariiabarabukha:latest
+        ports:
+            - containerPort: 8080
